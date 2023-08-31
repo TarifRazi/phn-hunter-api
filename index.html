@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Phone API</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-6xl">Hunting Phone</h2>
+    </header>
+    <main class="container mx-auto mt-8">
+
+        <!-- search -->
+        <section class="bg-gray-100 p-4 m-4">
+            <input id="search-field" type="text" placeholder="search..." class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+
+
+        </section>
+
+
+        <section>
+            <!-- loading -->
+            <div id="loading-dots" class="text-center py-40 hidden">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+            <!-- search result -->
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
+
+            </div>
+
+            <!-- Show all button -->
+            <div id="show-all-container" class="my-10 hidden">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+            </div>
+        </section>
+
+        <!-- modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="">open modal</button> -->
+        <dialog id="showDetailsModal" class="modal modal-bottom h-auto sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <h3 id="show-details-phone-name" class="font-bold text-lg"></h3>
+
+                <div id="show-details-container">
+
+                </div>
+
+                <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </div>
+            </form>
+        </dialog>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="phone.js"></script>
+</body>
+
+</html>
